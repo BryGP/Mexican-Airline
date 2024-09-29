@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vuelos Disponibles</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="vuelos.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <a href="index.html" title="Inicio">🏠</a>
+        <a href="vuelos.html" title="Vuelos Disponibles" class="active">✈️</a>
+        <a href="settings.html" title="Configuración">⚙️</a>
+        <a href="checkin.html" title="Check-In">✅</a>
+        <a href="reservations.html" title="Reservas">📖</a>
+        <a href="details.html" title="Detalles de Vuelo">📄</a>
+        <a href="account.html" title="Usuario">👤</a>
+    </aside>
+    <main class="main-content">
+        <header>
+            <div class="logo">Mexicana</div>
+            <input type="search" placeholder="Buscar vuelos" class="search-bar">
+        </header>
+        <section class="flights-list">
+            <h2>Vuelos Disponibles</h2>
+            <div class="flight-card">
+                <div class="flight-info">
+                    <h3>México City (MEX) - New York (JFK)</h3>
+                    <p>Salida: 10:00 AM | Llegada: 3:30 PM</p>
+                    <p>Duración: 5h 30m</p>
+                </div>
+                <div class="flight-price">
+                    <p>$599 USD</p>
+                    <button>Reservar</button>
+                </div>
+            </div>
+            <div class="flight-card">
+                <div class="flight-info">
+                    <h3>Cancún (CUN) - Madrid (MAD)</h3>
+                    <p>Salida: 11:30 PM | Llegada: 2:45 PM (siguiente día)</p>
+                    <p>Duración: 10h 15m</p>
+                </div>
+                <div class="flight-price">
+                    <p>$799 USD</p>
+                    <button>Reservar</button>
+                </div>
+            </div>
+            <!-- Más tarjetas de vuelo aquí -->
+        </section>
+    </main>
+</body>
+
+</html>

@@ -79,7 +79,7 @@ nav ul li a {
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url('/assets/img/avionblanco.jpg');
+    background-image: url('/main/assets/img/avionblanco.jpg');
     background-size: cover;
     background-position: center;
     z-index: 1;
