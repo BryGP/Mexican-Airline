@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mexicana - Home</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <a href="vuelos.html" title="Vuelos Disponibles">✈️</a>
+        <a href="settings.html" title="Configuración">⚙️</a>
+        <a href="checkin.html" title="Check-In">✅</a>
+        <a href="reservations.html" title="Reservas">📖</a>
+        <a href="details.html" title="Detalles de Vuelo">📄</a>
+        <a href="account.html" title="Usuario">👤</a>
+    </aside>
+    <main class="main-content">
+        <header>
+            <div class="logo">Mexicana</div>
+            <input type="search" placeholder="Buscar" class="search-bar">
+        </header>
+        <section class="flight-booking">
+            <div class="background-image"></div>
+            <div class="content">
+                <h2>Planea tu viaje</h2>
+                <form class="flight-form">
+                    <div class="form-group">
+                        <label for="origin">Origen</label>
+                        <input type="text" id="origin" placeholder="Qro (MX)">
+                    </div>
+                    <div class="form-group">
+                        <label for="destination">Destino</label>
+                        <input type="text" id="destination" placeholder="Italy (EUR)">
+                    </div>
+                    <div class="form-group">
+                        <label for="date">¿Cuándo?</label>
+                        <input type="date" id="date" placeholder="Nov 24, 2024">
+                        <span class="calendar"></span>
+                    </div>
+                    <button type="submit">Buscar</button>
+                </form>
+            </div>
+        </section>
+        <h2>Popularidad en Viajes:</h2>
+        <section class="popular-destinations">
+            <div class="destination-card">
+                <img src="/main/assets/img/cmdx.jpg" alt="Destino 1">
+                <div class="content">
+                    <h3>CMDX - MX</h3>
+                    <p>Sep 21, 2024</p>
+                </div>
+            </div>
+            <div class="destination-card">
+                <img src="/main/assets/img/china.jpg" alt="Destino 2">
+                <div class="content">
+                    <h3>China - HGK</h3>
+                    <p>Nov 12, 2024</p>
+                </div>
+            </div>
+            <div class="destination-card offer-card">
+                <video src="/main/assets/videos/80 OFF.mp4" autoplay loop muted playsinline
+                    class="background-video"></video>
+                <div class="content">
+                    <h3>80% Off</h3>
+                    <p>¡Viaja a través del mundo!</p>
+                </div>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>

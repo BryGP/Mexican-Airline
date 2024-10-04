@@ -1,0 +1,101 @@
+
+
+.reservations-panel {
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.reservations-panel h2 {
+    color: #0099ff;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+.reservation-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.reservation-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.reservation-header h3 {
+    color: #333;
+    font-size: 18px;
+}
+
+.reservation-status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.reservation-status:contains("Confirmado") {
+    background-color: #e6fff2;
+    color: #00cc66;
+}
+
+.reservation-status:contains("Pendiente de Pago") {
+    background-color: #fff9e6;
+    color: #ffa500;
+}
+
+.reservation-details {
+    margin-bottom: 15px;
+}
+
+.reservation-details p {
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.reservation-actions {
+    display: flex;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+.action-button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.action-button:not(.cancel) {
+    background-color: #0099ff;
+    color: white;
+}
+
+.action-button:not(.cancel):hover {
+    background-color: #007acc;
+}
+
+.action-button.cancel {
+    background-color: #ff3333;
+    color: white;
+}
+
+.action-button.cancel:hover {
+    background-color: #cc0000;
+}
+
+/* Estilos para el ícono activo en la barra lateral */
+.sidebar a.active {
+    color: #0099ff;
+    background-color: #e6f7ff;
+    border-radius: 50%;
+    padding: 5px;
+}

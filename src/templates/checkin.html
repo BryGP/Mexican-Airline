@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check-In - Mexicana</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="checkin.css">
+</head>
+
+<body>
+    <aside class="sidebar">
+        <a href="index.html" title="Inicio">🏠</a>
+        <a href="vuelos.html" title="Vuelos Disponibles">✈️</a>
+        <a href="settings.html" title="Configuración">⚙️</a>
+        <a href="checkin.html" title="Check-In" class="active">✅</a>
+        <a href="reservations.html" title="Reservas">📖</a>
+        <a href="details.html" title="Detalles de Vuelo">📄</a>
+        <a href="account.html" title="Usuario">👤</a>
+    </aside>
+    <main class="main-content">
+        <header>
+            <div class="logo">Mexicana</div>
+            <input type="search" placeholder="Buscar reserva" class="search-bar">
+        </header>
+        <section class="checkin-panel">
+            <h2>Check-In Online</h2>
+            <form class="checkin-form">
+                <div class="form-group">
+                    <label for="booking-reference">Referencia de Reserva</label>
+                    <input type="text" id="booking-reference" name="booking-reference" placeholder="Ej. ABC123" required>
+                </div>
+                <div class="form-group">
+                    <label for="last-name">Apellido</label>
+                    <input type="text" id="last-name" name="last-name" placeholder="Ingrese su apellido" required>
+                </div>
+                <button type="submit" class="checkin-button">Iniciar Check-In</button>
+            </form>
+            <div class="checkin-info">
+                <h3>Información Importante</h3>
+                <ul>
+                    <li>El check-in online está disponible desde 24 horas hasta 1 hora antes de la salida del vuelo.</li>
+                    <li>Asegúrese de tener a mano su pasaporte o identificación válida.</li>
+                    <li>Si viaja con equipaje especial, por favor contacte a nuestro servicio al cliente.</li>
+                </ul>
+            </div>
+        </section>
+    </main>
+</body>
+
+</html>
