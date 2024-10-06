@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from '../styles/styles.css';
+import '../styles/styles.css';
 import avionBlanco from '../assets/img/avionblanco.jpg';
 import cmdx from '../assets/img/cmdx.jpg';
 import china from '../assets/img/china.jpg';
@@ -38,6 +38,7 @@ const Home = () => {
 
                 <h2>Popularidad en Viajes:</h2>
 
+                
                 <section className="popular-destinations">
                     <div className="destination-card">
                         <img src={cmdx} alt="CMDX - MX" />

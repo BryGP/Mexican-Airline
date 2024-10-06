@@ -1,5 +1,5 @@
 
-/* Hoja de Syles CSS by MEXICANA*/
+/* Hoja de Styles CSS by MEXICANA */
 * {
     margin: 0;
     padding: 0;
@@ -10,22 +10,6 @@ body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
     display: flex;
-}
-
-.sidebar {
-    width: 60px;
-    background-color: rgb(255, 255, 255);
-    height: 100vh;
-    padding: 20px 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-/* Barra lateral (Color) */
-.sidebar a {
-    margin-bottom: 20px;
-    color: #333;
-    text-decoration: none;
 }
 
 .main-content {
@@ -39,6 +23,7 @@ header {
     align-items: center;
     margin-bottom: 20px;
 }
+
 /* LOGO */
 .logo {
     font-size: 24px;
@@ -59,6 +44,7 @@ nav ul li a {
     text-decoration: none;
     color: #333;
 }
+
 /* Barra de busqueda */
 .search-bar {
     padding: 5px 10px;
@@ -72,6 +58,7 @@ nav ul li a {
     overflow: hidden;
     margin-bottom: 30px;
 }
+
 /* Contenedor de barra de busqueda */
 .flight-booking .background-image {
     position: absolute;
@@ -108,6 +95,7 @@ nav ul li a {
 .form-group {
     flex: 1;
 }
+
 /* Labels de "Planea tu viaje" */
 .form-group label {
     display: block;
@@ -116,36 +104,6 @@ nav ul li a {
     font-size: 14px;
 }
 
-.flight-booking .content {
-    position: relative;
-    z-index: 2;
-    padding: 30px;
-    background-color: rgba(255, 255, 255, 0.2);
-    backdrop-filter: blur(0px);
-}
-
-.flight-booking h2 {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: white;
-}
-
-.flight-form {
-    display: flex;
-    gap: 20px;
-    align-items: flex-end;
-}
-
-.form-group {
-    flex: 1;
-}
-/* Labels de "Planea tu viaje" */
-.form-group label {
-    display: block;
-    margin-bottom: 5px;
-    color: rgb(0, 0, 0);
-    font-size: 16px;
-}
 /* Marco de labels */
 .flight-form input {
     width: 100%;
@@ -166,6 +124,7 @@ nav ul li a {
     font-size: 16px;
     transition: background-color 0.3s ease;
 }
+
 /* Boton Buscar */
 .flight-form button:hover {
     background-color: #007acc;
@@ -178,51 +137,64 @@ nav ul li a {
     width: 200px;
     opacity: 0.5;
 }
+
 /* Catalogo de destinos */
 .popular-destinations {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
+
 /* Ajustes de las tarjetas de destinos */
-.destination-card, .image-container, .offer-card .image-container {
+.destination-card,
+.image-container,
+.offer-card .image-container {
     height: 250px;
     overflow: hidden;
     background-color: white;
     border-radius: 10px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
+
 /* Ajustes de imagenes de destinos */
-.destination-card img, .offer-card img {
+.destination-card img,
+.offer-card img {
     width: 100%;
     height: 150px;
     object-fit: cover;
 }
+
 /* Ajustes de contenido de destinos */
-.destination-card .content, .offer-card .content {
+.destination-card .content,
+.offer-card .content {
     padding: 15px;
     flex-grow: 1;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
+
 /* Ajustes de texto de destinos */
-.destination-card h3, .offer-card h3 {
+.destination-card h3,
+.offer-card h3 {
     margin-bottom: 5px;
     font-size: 18px;
     font-weight: bold;
 }
+
 /* Ajustes de parrafos de destinos */
 .destination-card p {
     color: #666;
     font-size: 14px;
 }
+
 /* Ofertas */
 .offer-card {
     background-color: #ffe6e6;
     text-align: center;
     position: relative;
 }
+
 /* Ajustes de imagenes de ofertas */
 .offer-card .image-container::before {
     content: '';
@@ -233,6 +205,7 @@ nav ul li a {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.5);
 }
+
 /* Ajustes de contenido de ofertas */
 .offer-card .content {
     position: absolute;
@@ -257,30 +230,23 @@ nav ul li a {
     color: #ff3333;
     font-size: 23px;
 }
-/* Ajustes de botones de ofertas */
+
+/* Estilo para hacer que el panel sea más responsivo */
 @media (max-width: 768px) {
-    body {
-        flex-direction: column;
-    }
-
-    .sidebar {
-        width: 100%;
-        height: auto;
-        padding: 10px;
-        flex-direction: row;
-        justify-content: space-around;
-    }
-
-    .sidebar a {
-        margin-bottom: 0;
-        margin-right: 10px;
+    .popular-destinations {
+        grid-template-columns: 1fr;
     }
 
     .flight-form {
         flex-direction: column;
     }
 
-    .popular-destinations {
-        grid-template-columns: 1fr;
+    .airplane-image {
+        display: none;
     }
+
+    /* Ajustes de tamaño en el video de ofertas:
+    - Mover a la ultima capa (fondo)
+    - adaptar el tamaño de pantalla sin mover la posicion de los elementos */
+    
 }

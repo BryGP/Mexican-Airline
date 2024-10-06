@@ -1,0 +1,83 @@
+
+/* Estilos generales de la barra lateral */
+.sidebar {
+    width: 80px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+}
+
+.sidebar a {
+    text-decoration: none;
+    color: #333;
+    font-size: 24px;
+    margin: 20px 0;
+    transition: color 0.3s ease;
+}
+
+.sidebar a:hover {
+    color: #0099ff;
+}
+
+/* Ocultar la barra lateral en pantallas pequeñas */
+@media (max-width: 768px) {
+    .sidebar.collapsed {
+        width: 0;
+        overflow: hidden;
+    }
+
+    .sidebar.expanded {
+        width: 80px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}
+
+/* Botón del menú para expandir/colapsar la barra lateral en pantallas pequeñas */
+.menu-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    background-color: #0099ff;
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 50%;
+    z-index: 1000;
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .menu-btn {
+        display: block;
+    }
+}
+
+/* Ajustes para el contenido principal cuando la barra lateral está visible */
+.main-content {
+    margin-left: 80px;
+    /* El margen debe coincidir con el ancho de la barra lateral */
+    padding: 20px;
+    width: calc(100% - 80px);
+    /* Ajusta el ancho teniendo en cuenta la barra lateral */
+    transition: margin-left 0.3s ease;
+}
+
+@media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+        width: 100%;
+    }
+}

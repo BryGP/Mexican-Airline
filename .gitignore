@@ -3,6 +3,7 @@
 # dependencies
 /src/templates
 /node_modules
+/airline
 /.pnp
 .pnp.js
 
