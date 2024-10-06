@@ -9,11 +9,10 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #f0f0f0;
-    display: flex;
 }
 
 .main-content {
-    flex-grow: 1;
+    transition: margin-left 0.3s ease;
     padding: 20px;
 }
 
@@ -231,8 +230,18 @@ nav ul li a {
     font-size: 23px;
 }
 
-/* Estilo para hacer que el panel sea más responsivo */
+/* Responsive styles */
+@media (min-width: 769px) {
+    .main-content {
+        margin-left: 80px; /* Width of the sidebar */
+    }
+}
+
 @media (max-width: 768px) {
+    .main-content {
+        margin-left: 0;
+    }
+
     .popular-destinations {
         grid-template-columns: 1fr;
     }
@@ -245,8 +254,8 @@ nav ul li a {
         display: none;
     }
 
-    /* Ajustes de tamaño en el video de ofertas:
-    - Mover a la ultima capa (fondo)
-    - adaptar el tamaño de pantalla sin mover la posicion de los elementos */
-    
+    /* Adjust for sidebar when it's expanded on mobile */
+    .sidebar.expanded + .main-content {
+        margin-left: 80px;
+    }
 }

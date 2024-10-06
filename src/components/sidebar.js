@@ -1,9 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import './sidebar.css'; // Asegúrate de que está importando el CSS correcto
+import './sidebar.css';
 
 function Sidebar() {
-  const [isExpanded, setIsExpanded] = useState(true);
+  const [isExpanded, setIsExpanded] = useState(window.innerWidth > 768);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsExpanded(window.innerWidth > 768);
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
 
   const toggleSidebar = () => {
     setIsExpanded(!isExpanded);
@@ -12,16 +21,16 @@ function Sidebar() {
   return (
     <>
       <button className="menu-btn" onClick={toggleSidebar}>
-        {isExpanded ? '⬅️' : '➡️'}
+        ☰
       </button>
-      <aside className={`sidebar ${isExpanded ? 'expanded' : 'collapsed'}`} aria-label="Barra lateral de navegación">
-        <Link to="/" title="Inicio" aria-label="Inicio">🏠</Link>
-        <Link to="/vuelos" title="Vuelos Disponibles" aria-label="Vuelos Disponibles">✈️</Link>
-        <Link to="/settings" title="Configuración" aria-label="Configuración">⚙️</Link>
-        <Link to="/checkin" title="Check-In" aria-label="Check-In">✅</Link>
-        <Link to="/reservations" title="Reservas" aria-label="Reservas">📖</Link>
-        <Link to="/details" title="Detalles de Vuelo" aria-label="Detalles de Vuelo">📄</Link>
-        <Link to="/account" title="Usuario" aria-label="Usuario">👤</Link>
+      <aside className={`sidebar ${isExpanded ? 'expanded' : 'collapsed'}`}>
+        <Link to="/" title="Inicio">🏠</Link>
+        <Link to="/vuelos" title="Vuelos Disponibles">✈️</Link>
+        <Link to="/settings" title="Configuración">⚙️</Link>
+        <Link to="/checkin" title="Check-In">✅</Link>
+        <Link to="/reservations" title="Reservas">📖</Link>
+        <Link to="/details" title="Detalles de Vuelo">📄</Link>
+        <Link to="/account" title="Usuario">👤</Link>
       </aside>
     </>
   );
