@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import '../styles/styles.css';
 import avionBlanco from '../assets/img/avionblanco.jpg';
+import logo from '../assets/img/logo.png';
 
 // Files de imagenes y video a utilizar en el catalogo
 import cmdx from '../assets/img/cmdx.jpg';
@@ -13,29 +15,36 @@ import rio from '../assets/img/rio.jpg';
 
 const Home = () => {
     const destinations = [
-        { id: 1, name: 'CMDX - MX', date: 'Sep 21, 2024', image: cmdx },
-        { id: 2, name: 'China - HGK', date: 'Nov 12, 2024', image: china },
-        { id: 3, name: 'Paris - FR', date: 'Dec 24, 2024', image: paris },
-        { id: 4, name: 'Tokyo - JP', date: 'Jan 15, 2025', image: tokyo },
-        { id: 5, name: 'New York - USA', date: 'Feb 28, 2025', image: newyork },
-        { id: 6, name: 'Rio - BR', date: 'Mar 10, 2025', image: rio }
+        { id: 1, name: 'Guerrero - Acapulco', image: cmdx },
+        { id: 2, name: 'Campeche - Campeche', image: china },
+        { id: 3, name: 'Quintana Roo - Chetumal', image: paris },
+        { id: 4, name: 'Tamaulipas - CD Victoria', image: tokyo },
+        { id: 5, name: 'Guadalajara - Jalisco', image: newyork },
+        { id: 6, name: 'Oaxaca Ixtepec', image: rio },
+        { id: 7, name: 'Sinaloa - Mazatlán', image: rio },
+        { id: 8, name: 'Yucatán - Mérida', image: rio },
+        { id: 9, name: 'Nuevo León - Monterrey', image: rio },
+        { id: 10, name: 'Tamaulipas - Nuevo Laredo', image: rio },
+        { id: 11, name: 'Chiapas - Palenque', image: rio },
+        { id: 12, name: 'Jalisco - Puerto Vallarta', image: rio },
+        { id: 13, name: 'Baja California - Tijuana', image: rio },
+        { id: 14, name: 'Quintana Roo - Tulum', image: rio },
+        { id: 15, name: 'Michoacán - Uruapan', image: rio },
+        { id: 16, name: 'Baja California Sur - San José del Cabo', image: rio },
+        { id: 17, name: 'Tabasco - Villahermosa', image: rio },
+        { id: 18, name: 'Guerrero - Zihuatanejo', image: rio },
     ];
 
-    const [currentIndex, setCurrentIndex] = useState(0);
-
-    // Cambiar de imagen cada 5 segundos
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setCurrentIndex((currentIndex + 1) % destinations.length);
-        }, 5000); // 5000ms = 5s
-
-        return () => clearInterval(interval);
-    }, []);
+    const [currentIndex] = useState(0);
 
     return (
         <main className="main-content">
             <header>
-                <div className="logo">Mexicana</div>
+                <Link to="/" className="logo-link">
+                    <div className="logo">
+                        <img src={logo} alt="Mexicana Logo" />
+                    </div>
+                </Link>
                 <input type="search" placeholder="Buscar" className="search-bar" />
             </header>
 
@@ -61,7 +70,7 @@ const Home = () => {
                 </div>
             </section>
 
-            <h2>Popularidad en Viajes:</h2>
+            <h2>Nuestros Destinos:</h2>
 
             <section className="popular-destinations">
                 {destinations.map((destination, index) => (

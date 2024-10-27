@@ -1,13 +1,20 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+import logo from '../assets/img/logo.png';
 import '../styles/vuelos.css';
 
 function Vuelos() {
     return (
         <main className="main-content">
             <header>
-                <div className="logo">Mexicana</div>
-                <input type="search" placeholder="Buscar vuelos" className="search-bar" />
+                <Link to="/" className="logo-link">
+                    <div className="logo">
+                        <img src={logo} alt="Mexicana Logo" />
+                    </div>
+                </Link>
+                <input type="search" placeholder="Buscar" className="search-bar" />
             </header>
+
             <section className="flights-list">
                 <h2>Vuelos Disponibles</h2>
                 <div className="flight-card">
