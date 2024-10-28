@@ -1,38 +1,52 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/styles.css';
+
+// Miselanea
 import avionBlanco from '../assets/img/avionblanco.jpg';
 import logo from '../assets/img/logo.png';
+import mapa from '../assets/img/mapa.png';
 
 // Files de imagenes y video a utilizar en el catalogo
-import cmdx from '../assets/img/cmdx.jpg';
-import china from '../assets/img/china.jpg';
-import videoOffer from '../assets/videos/80 OFF.mp4';
-import paris from '../assets/img/pawi.jpg';
-import tokyo from '../assets/img/tokyo.jpg';
-import newyork from '../assets/img/newyork.jpg';
-import rio from '../assets/img/rio.jpg';
+import acapulco from '../assets/img/acapulco.jpg';
+import campeche from '../assets/img/campeche.jpg';
+import chetumal from '../assets/img/chetumal.jpg';
+import tamaulipas from '../assets/img/tamaulipas.jpg';
+import jalisco from '../assets/img/jalisco.jpg';
+import oaxaca from '../assets/img/oaxaca.jpg';
+import mazatlan from '../assets/img/mazatlan.jpg';
+import merida from '../assets/img/merida.jpg';
+import monterey from '../assets/img/monterey.jpg';
+import nuevol from '../assets/img/nuevol.jpg';
+import chiapas from '../assets/img/palenque.jpg';
+import ptovall from '../assets/img/ptovall.jpg';
+import tijuana from '../assets/img/tijuana.jpg';
+import tulum from '../assets/img/tulum.jpg';
+import uruapan from '../assets/img/uruapan.jpg';
+import josecabo from '../assets/img/josecabo.jpg';
+import tabasco from '../assets/img/villahermosa.jpg';
+import zihuatanejo from '../assets/img/zihuatanejo.jpg';
 
 const Home = () => {
     const destinations = [
-        { id: 1, name: 'Guerrero - Acapulco', image: cmdx },
-        { id: 2, name: 'Campeche - Campeche', image: china },
-        { id: 3, name: 'Quintana Roo - Chetumal', image: paris },
-        { id: 4, name: 'Tamaulipas - CD Victoria', image: tokyo },
-        { id: 5, name: 'Guadalajara - Jalisco', image: newyork },
-        { id: 6, name: 'Oaxaca Ixtepec', image: rio },
-        { id: 7, name: 'Sinaloa - Mazatlán', image: rio },
-        { id: 8, name: 'Yucatán - Mérida', image: rio },
-        { id: 9, name: 'Nuevo León - Monterrey', image: rio },
-        { id: 10, name: 'Tamaulipas - Nuevo Laredo', image: rio },
-        { id: 11, name: 'Chiapas - Palenque', image: rio },
-        { id: 12, name: 'Jalisco - Puerto Vallarta', image: rio },
-        { id: 13, name: 'Baja California - Tijuana', image: rio },
-        { id: 14, name: 'Quintana Roo - Tulum', image: rio },
-        { id: 15, name: 'Michoacán - Uruapan', image: rio },
-        { id: 16, name: 'Baja California Sur - San José del Cabo', image: rio },
-        { id: 17, name: 'Tabasco - Villahermosa', image: rio },
-        { id: 18, name: 'Guerrero - Zihuatanejo', image: rio },
+        { id: 1, name: 'Guerrero - Acapulco', image: acapulco },
+        { id: 2, name: 'Campeche - Campeche', image: campeche },
+        { id: 3, name: 'Quintana Roo - Chetumal', image: chetumal },
+        { id: 4, name: 'Tamaulipas - CD Victoria', image: tamaulipas },
+        { id: 5, name: 'Guadalajara - Jalisco', image: jalisco },
+        { id: 6, name: 'Oaxaca Ixtepec', image: oaxaca },
+        { id: 7, name: 'Sinaloa - Mazatlán', image: mazatlan },
+        { id: 8, name: 'Yucatán - Mérida', image: merida },
+        { id: 9, name: 'Nuevo León - Monterrey', image: monterey },
+        { id: 10, name: 'Tamaulipas - Nuevo Laredo', image: nuevol },
+        { id: 11, name: 'Chiapas - Palenque', image: chiapas },
+        { id: 12, name: 'Jalisco - Puerto Vallarta', image: ptovall },
+        { id: 13, name: 'Baja California - Tijuana', image: tijuana },
+        { id: 14, name: 'Quintana Roo - Tulum', image: tulum },
+        { id: 15, name: 'Michoacán - Uruapan', image: uruapan },
+        { id: 16, name: 'Baja California Sur - San José del Cabo', image: josecabo },
+        { id: 17, name: 'Tabasco - Villahermosa', image: tabasco },
+        { id: 18, name: 'Guerrero - Zihuatanejo', image: zihuatanejo },
     ];
 
     const [currentIndex] = useState(0);
@@ -55,7 +69,7 @@ const Home = () => {
                     <form className="flight-form">
                         <div className="form-group">
                             <label htmlFor="origin">Origen</label>
-                            <input type="text" id="origin" placeholder="Qro (MX)" />
+                            <input type="text" id="origin" placeholder="CDMX (MX)" />
                         </div>
                         <div className="form-group">
                             <label htmlFor="destination">Destino</label>
@@ -81,20 +95,18 @@ const Home = () => {
                         <img src={destination.image} alt={destination.name} />
                         <div className="content">
                             <h3>{destination.name}</h3>
-                            <p>{destination.date}</p>
                         </div>
                     </div>
                 ))}
+            </section>
 
-                <div className="video-offer">
-                    <video src={videoOffer} autoPlay muted loop></video>
-                    <div className="content">
-                        <h3>¡Oferta del 80% de Descuento!</h3>
-                        <p>¡Viaja a través del mundo</p>
-                    </div>
+            <section className="map-section">
+                <h2 className="mapa"> Conoce nuestro mapa:</h2>
+                <div className="map-container">
+                    <img src={mapa} alt="Mapa de destinos" className="map-img" />
                 </div>
             </section>
-        </main>
+        </main >
     );
 };
 

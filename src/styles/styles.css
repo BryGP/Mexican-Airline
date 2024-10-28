@@ -42,7 +42,8 @@ header {
 }
 
 .logo img {
-    max-height: 50px; /* Tamaño del logo */
+    max-height: 50px;
+    /* Tamaño del logo */
     width: auto;
     cursor: pointer;
 }
@@ -249,11 +250,32 @@ nav ul li a {
     font-size: 23px;
 }
 
+/* Propiedades del mapa */
+.map-title {
+    margin-top: 40px;
+    margin-bottom: 20px;
+  }
+  
+  .map-container {
+    width: 100%;
+    max-width: 1200px; /* Ajusta este valor según sea necesario */
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+  }
+  
+  .map-image {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
 /* Responsive styles */
 @media (min-width: 769px) {
+    
+    /* Contenido general */
     .main-content {
         margin-left: 80px;
-        /* Width of the sidebar */
     }
 }
 
