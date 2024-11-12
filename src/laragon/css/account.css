@@ -1,10 +1,20 @@
 
+/* Estilos para account.js */
+
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
 
 .account-panel {
     background-color: #ffffff;
     border-radius: 10px;
     padding: 30px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
 }
 
 .account-panel h2 {
@@ -93,6 +103,7 @@
     font-size: 14px;
 }
 
+/* Estilos para el botón de guardar */
 .save-button {
     background-color: #0099ff;
     color: white;
@@ -101,11 +112,14 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .save-button:hover {
     background-color: #007acc;
+    transform: translateY(-2px); /* Mueve el botón hacia arriba */
+    box-shadow: 0 4px 15px rgba(0, 122, 204, 0.3); /* Sombra para el efecto de elevación */
+
 }
 
 .account-actions {
@@ -122,11 +136,23 @@
     border-radius: 5px;
     cursor: pointer;
     font-size: 14px;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .action-button:hover {
     background-color: #e0e0e0;
+    transform: translateY(-2px); /* Mueve el botón hacia arriba */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra para el efecto de elevación */
+}
+
+/* Contenido Despegable */
+.toggle-content {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 10px;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 1;
 }
 
 /* Estilos para el ícono activo en la barra lateral */
@@ -137,6 +163,7 @@
     padding: 5px;
 }
 
+/* Estilo para hacer que el panel sea más responsivo */
 @media (max-width: 768px) {
     .account-info {
         flex-direction: column;
