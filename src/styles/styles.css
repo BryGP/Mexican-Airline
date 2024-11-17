@@ -70,6 +70,38 @@ nav ul li a {
     border-radius: 5px;
 }
 
+/* Sugerencias de la barra de búsqueda */
+.search-container {
+    position: relative;
+    width: 100%;
+}
+
+.suggestions-list {
+    position: absolute;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    max-height: 200px;
+    overflow-y: auto;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.suggestions-list li {
+    padding: 8px;
+    cursor: pointer;
+    font-size: 14px;
+    color: #333;
+}
+
+.suggestions-list li:hover {
+    background-color: #f0f0f0;
+}
+
 /* Flight booking section styles */
 .flight-booking {
     position: relative;

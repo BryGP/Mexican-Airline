@@ -59,7 +59,6 @@ const Home = () => {
                         <img src={logo} alt="Mexicana Logo" />
                     </div>
                 </Link>
-                <input type="search" placeholder="Buscar" className="search-bar" />
             </header>
 
             <section className="flight-booking">

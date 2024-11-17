@@ -76,6 +76,30 @@ body {
     padding: 5px;
 }
 
+/* Estilos para los temas de color */
+.light-theme {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.dark-theme {
+    background-color: #222222;
+    color: #f4f4f4;
+}
+
+/* Estilos para el modo de alto contraste */
+.high-contrast {
+    background-color: #000000;
+    color: #ffffff;
+}
+.high-contrast .settings-panel {
+    background-color: #333333;
+    color: #ffffff;
+}
+.larger-text {
+    font-size: 18px !important;
+}
+
 /* Estilo para hacer que el panel sea más responsivo */
 @media screen and (max-width: 768px) {
     .settings-panel {
