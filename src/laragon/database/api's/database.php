@@ -1,9 +1,10 @@
 <?php
-$host = 'localhost';
-$db   = 'mexicana_airlines';
-$user = 'root';
-$pass = '';
-$charset = 'utf8mb4';
+
+// Datos de conexión
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mexicana";
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";
 $options = [
