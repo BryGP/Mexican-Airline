@@ -1,40 +1,94 @@
-# Getting Started with Create React App
+# Mexican-Airline Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Overview
 
-## Available Scripts
+This project is a comprehensive web application for a fictional Mexican airline, demonstrating a full-stack development approach using React for the frontend and PHP with MySQL for the backend. It showcases various features typical in an airline booking system, including flight search, reservations, user accounts, and flight management.
 
-In the project directory, you can run:
+## Key Features
 
-### `npm start`
+- User authentication and account management
+- Flight search and booking system
+- Reservation management (view, modify, cancel)
+- Admin panel for flight and user management
+- Responsive design for mobile and desktop views
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Technologies Used
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- Frontend:
+  - React.js
+  - Tailwind CSS for styling
+  - Axios for API requests
+- Backend:
+  - PHP
+  - MySQL database
+- Development Environment:
+  - Laragon (for local development)
 
-### `npm test`
+## Project Structure
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+The project is structured as follows:
 
-### `npm run build`
+```
+mexican-airline/
+│
+├── src/                 # React frontend source files
+│   ├── components/      # Reusable React components
+│   ├── pages/           # Page components (Account, Details, etc.)
+│   ├── styles/          # CSS files
+│   └── App.js           # Main React component
+│
+├── api/                 # PHP backend files
+│   ├── config/          # Database configuration
+│   └── *.php            # API endpoints (account.php, details.php, etc.)
+│
+├── database/            # SQL scripts for database setup
+│
+├── public/              # Public assets
+│
+└── README.md            # Project documentation
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Setup and Installation
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+1. Clone the repository
+2. Set up Laragon with PHP and MySQL
+3. Import the database schema using the SQL scripts in the `database/` directory
+4. Configure the database connection in `api/config/database.php`
+5. Install frontend dependencies:
+   ```
+   cd mexican-airline
+   npm install
+   ```
+6. Start the React development server:
+   ```
+   npm start
+   ```
+7. Access the application at `http://localhost:3000`
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Key Learnings
 
-### `npm run eject`
+This project demonstrates:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+1. Integration of a React frontend with a PHP backend
+2. RESTful API design and implementation
+3. State management in React using hooks
+4. Database design for a complex system like airline reservations
+5. User authentication and session management
+6. Responsive web design principles
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Future Enhancements
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- Implement real-time flight tracking
+- Add a payment gateway for ticket purchases
+- Enhance the admin panel with more detailed analytics
+- Implement a loyalty program for frequent flyers
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## Contributing
+
+Contributions to this project are welcome. Please fork the repository and submit a pull request with your proposed changes.
+
+## License
+
+This project is open-source and available under the MIT License.
+### Made by:
+**Bryan GP**
