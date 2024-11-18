@@ -6,7 +6,7 @@ import Reservations from './pages/reservations';
 import Vuelos from './pages/vuelos';
 import Settings from './pages/settings';
 import CheckIn from './pages/checkin';
-import Details from './pages/details';
+import FlightDetails from './pages/details';
 import Account from './pages/account';
 import './App.css';
 
@@ -21,7 +21,7 @@ function App() {
           <Route path="/vuelos" element={<Vuelos />} />
           <Route path="/settings" element={<Settings />} />
           <Route path="/checkin" element={<CheckIn />} />
-          <Route path="/details" element={<Details />} />
+          <Route path="/details/:id" element={<FlightDetails />} />
           <Route path="/account" element={<Account />} />
         </Routes>
       </div>

@@ -4,6 +4,26 @@ import logo from '../assets/img/logo.png';
 import '../styles/account.css';
 import profilePlaceholder from '../assets/img/usr1.png';
 
+function guardarServiciosAdicionales(usuarioId, servicios) {
+    fetch('http://localhost/mexicana-airline/apis/account.php', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            usuario_id: usuarioId,
+            servicios: servicios
+        })
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert("Servicios adicionales guardados correctamente.");
+        } else {
+            alert("Error al guardar servicios: " + data.error);
+        }
+    })
+    .catch(error => console.error('Error:', error));
+}
+
 function Account() {
 
     // Estados para mostrar u ocultar secciones de pago

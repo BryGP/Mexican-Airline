@@ -1,9 +1,40 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import { useParams, Link } from 'react-router-dom';
+import axios from 'axios';
 import logo from '../assets/img/logo.png';
 import '../styles/details.css';
 
 function FlightDetails() {
+    const { id } = useParams();
+    const [flight, setFlight] = useState(null);
+    const [passenger, setPassenger] = useState(null);
+    const [error, setError] = useState(null);
+
+    useEffect(() => { fetchFlightDetails(); fetchPassengerDetails(); }, [id]);
+
+    const fetchFlightDetails = async () => {
+        try {
+            const response = await axios.get(`http://localhost/mexicana-airline/apis/details.php?id=${id}`);
+            setFlight(response.data);
+        } catch (err) {
+            setError('Error al cargar los detalles del vuelo.');
+        }
+    };
+
+    const fetchPassengerDetails = async () => {
+        try {
+            const userId = 1; // Puedes cambiarlo dinámicamente según sesión o parámetro
+            const res = await axios.get(`http://localhost/mexicana-airline/apis/account.php?id=${userId}`);
+            setPassenger(res.data);
+        } catch (err) {
+            console.error("Error durante la solicitud del pasajero:", err);
+            setError('Error al cargar la información del pasajero.');
+        }
+    };
+
+    if (error) return <div className="error-message">{error}</div>;
+    if (!flight) return <div>Cargando detalles...</div>;
+
     return (
         <main className="main-content">
             <header>
@@ -17,45 +48,48 @@ function FlightDetails() {
 
             <section className="flight-details-panel">
                 <h2>Detalles del Vuelo</h2>
+
                 <div className="flight-info">
                     <div className="route-info">
                         <div className="departure">
-                            <h3>México City (MEX)</h3>
-                            <p>15 de Agosto, 2024</p>
-                            <p>10:00 AM</p>
+                            <h3>{flight.origen}</h3>
+                            <p>{new Date(flight.fecha_salida).toLocaleDateString()}</p>
+                            <p>{new Date(flight.fecha_salida).toLocaleTimeString()}</p>
                         </div>
                         <div className="flight-duration">
-                            <p>5h 30m</p>
+                            <p>{flight.capacidad} Pasajeros</p>
                             <div className="route-line"></div>
-                            <p>Vuelo Directo</p>
+                            <p>Precio: ${flight.precio}</p>
                         </div>
                         <div className="arrival">
-                            <h3>New York (JFK)</h3>
-                            <p>15 de Agosto, 2024</p>
-                            <p>3:30 PM</p>
+                            <h3>{flight.destino}</h3>
+                            <p>{new Date(flight.fecha_llegada).toLocaleDateString()}</p>
+                            <p>{new Date(flight.fecha_llegada).toLocaleTimeString()}</p>
                         </div>
                     </div>
+
                     <div className="flight-details">
-                        <p><strong>Número de Vuelo:</strong> MX1234</p>
-                        <p><strong>Tipo de Avión:</strong> Boeing 787 Dreamliner</p>
-                        <p><strong>Estado del Vuelo:</strong> En Horario</p>
+                        <p><strong>Número de Vuelo:</strong> {flight.numero_vuelo}</p>
+                        <p><strong>Tipo de Aeronave:</strong> {flight.id_aeronave}</p>
                     </div>
                 </div>
+
                 <div className="passenger-info">
                     <h3>Información del Pasajero</h3>
-                    <p><strong>Nombre:</strong> Juan Pérez</p>
-                    <p><strong>Asiento:</strong> 14A (Ventana)</p>
-                    <p><strong>Clase:</strong> Económica</p>
-                    <p><strong>Equipaje:</strong> 1 Maleta (23kg)</p>
+                    <p><strong>Nombre:</strong> {passenger.nombre}</p>
+                    <p><strong>Correo Electrónico:</strong> {passenger.email}</p>
+                    <p><strong>Fecha de Registro:</strong> {new Date(passenger.fecha_registro).toLocaleDateString()}</p>
                 </div>
+
                 <div className="additional-services">
                     <h3>Servicios Adicionales</h3>
                     <ul>
-                        <li>Selección de Asiento</li>
-                        <li>Comida Especial: Vegetariana</li>
+                        <li>Asiento Preferencial</li>
+                        <li>Comida Especial</li>
                         <li>Seguro de Viaje</li>
                     </ul>
                 </div>
+
                 <div className="action-buttons">
                     <button className="action-button">Descargar Pase de Abordar</button>
                     <button className="action-button">Modificar Reserva</button>

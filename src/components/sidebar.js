@@ -29,7 +29,6 @@ function Sidebar() {
         <Link to="/settings" title="Configuración">⚙️</Link>
         <Link to="/checkin" title="Check-In">✅</Link>
         <Link to="/reservations" title="Reservas">📖</Link>
-        <Link to="/details" title="Detalles de Vuelo">📄</Link>
         <Link to="/account" title="Usuario">👤</Link>
       </aside>
     </>

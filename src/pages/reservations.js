@@ -95,7 +95,9 @@ function Reservations() {
                         </div>
                         <div className="reservation-actions">
                             <button className="action-button" onClick={() => handleAction('view', reservation.id)}>
-                                Ver Detalles
+                                <Link to={`/details/${reservation.id}`} className='link-button'>
+                                    Ver Detalles
+                                </Link>
                             </button>
                             {reservation.estado !== 'Cancelada' && (
                                 <>

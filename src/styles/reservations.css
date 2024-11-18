@@ -102,6 +102,35 @@ body {
     background-color: #cc0000;
 }
 
+/* Estilos específicos para los botones como enlaces */
+.link-button {
+    text-decoration: none; /* Remueve subrayados predeterminados de enlaces */
+    color: inherit; /* Hereda el color del botón (ya estilizado) */
+    display: inline-block; /* Para comportarse como un botón */
+    padding: 8px 16px; /* Asegura un tamaño consistente */
+    background-color: #0099ff; /* Mismo color que otros botones */
+    border: none;
+    border-radius: 5px;
+    font-size: 14px;
+    text-align: center; /* Centra el texto */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Suaviza el hover */
+}
+
+.link-button:hover {
+    background-color: #007acc; /* Color más oscuro al pasar el cursor */
+}
+
+/* Opcional: Para un enlace de botón "Cancelar" */
+.link-button.cancel {
+    background-color: #ff3333;
+    color: white;
+}
+
+.link-button.cancel:hover {
+    background-color: #cc0000;
+}
+
 /* Estilos para el ícono activo en la barra lateral */
 .sidebar a.active {
     color: #0099ff;
@@ -119,6 +148,4 @@ body {
     .reservation-card {
         margin-bottom: 15px; /* Espaciado más pequeño en tarjetas de reserva */
     }
-
-    /* Puedes agregar más estilos específicos para móviles aquí */
 }
